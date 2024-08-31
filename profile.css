@@ -1,0 +1,185 @@
+
+/* //card */
+.container{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    margin-inline: 1.5rem;
+    padding-block: 7rem;
+}
+
+.card_article{
+    position: relative;
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+
+}
+
+.card_profile,
+.card_mask{
+    width: 100px;
+    height: 100px;
+    background-color: var(--gray-color);
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-size: cover;
+
+}
+
+.card_profile img{
+    width: 95px;
+    background-size: cover;
+    
+
+}
+
+.card_mask img{
+    width: 95px;
+    background-size: cover;
+    
+
+}
+.card_profile{
+    border: 4px solid var(--container-color);
+    z-index: 5;
+    transition: opacity .4s, transform .4s;
+}
+
+
+.card_tooltip{
+    position: absolute;
+    bottom: -2rem;
+    padding-bottom: 5rem;
+    transition: opacity .4s, bottom ,4s cubic-bezier(.6, -.5, .3, 1.5);
+    pointer-events: none;
+    opacity: 0;
+}
+
+.card_content{
+    position: relative;
+    width: calc(100vw - 3rem);
+    background-color: var(--container-color);
+    box-shadow: 0 16px 32px hsla(230, 50%, 20%, .1);
+    padding: 2rem 1.5rem;
+    border-radius: 1.5;
+
+}
+
+.card_content::after{
+    content: '';
+    width: 32px;
+    height: 32px;
+    background-color: var(--container-color);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -.75rem;
+    margin-inline: auto;
+    border-radius: .25rem;
+    rotate: 45deg;
+}
+
+.card_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid  var(--border-color);
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rme;
+
+}
+
+.card_header span{
+    color: var(--title-color);
+    font-weight: 500;
+
+}
+
+.card_social{
+    display: flex;
+    column-gap: .75rem;
+}
+
+.card_social a{
+    font-size: 1.25rem;
+    color: var(--title-color);
+
+}
+
+.card_image{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: 0 auto 1rem;
+}
+
+.card_status
+{
+    width: 12px;
+    height: 12px;
+    background-color: var(--second-color);
+    position: absolute;
+    top: .5rem;
+    right: .75rem;
+    border-radius: 50%;
+    border: 2px solid var(--container-color);
+}
+
+.card_data{
+    text-align: center;
+}
+
+.card_name{
+    font-size: var(--h2-font-size);
+    color: var(--title-color);
+    font-weight: 600;
+    margin-bottom: .25rem;
+}
+
+.card_profession{
+    font-size: var(--normal-font-size);
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+
+.card_button{
+    display: inline-flex;
+    column-gap: .5rem;
+    color: var(--first-color);
+    font-weight: 500;
+}
+
+.card_buttton i{
+    font-size: 1.25rem;
+
+}
+
+
+/* sacle profile imag  */
+
+.card_article:hover .card_profile{
+    transform: scale(.8);
+    opacity: 0.7;
+}
+
+/* show tooltip card */
+.card_article:hover .card_tooltip{
+    opacity: 1;
+    pointer-events: initial;
+    bottom: 4rem;
+}
+
+/* breakpoint */
+
+@media screen and (min-width: 540px){
+.card_content{
+    width: 380px;
+    padding-inline: 2rem;
+    
+}
+}
